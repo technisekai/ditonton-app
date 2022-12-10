@@ -1,0 +1,27 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "backdrop_path": "/rv5gu2gYbOEYoArzH7bqJuMxvBB.jpg",
+      "first_air_date": "2021-01-25",
+      "genre_ids": [
+          18,
+          10751
+      ],
+      "id": 115646,
+      "name": "Lisa",
+      "origin_country": [
+          "BE"
+      ],
+      "original_language": "nl",
+      "original_name": "Lisa",
+      "overview": "",
+      "popularity": 1582.545,
+      "poster_path": "/w2nOl7KhwcUj11YxEi9Nknj9cqu.jpg",
+      "vote_average": 6.4,
+      "vote_count": 33
+    }
+  ],
+  "total_pages": 53,
+  "total_results": 1056
+}

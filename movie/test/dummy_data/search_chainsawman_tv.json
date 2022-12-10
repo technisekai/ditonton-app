@@ -1,0 +1,26 @@
+{
+    "page": 1,
+    "results": [
+      {
+        "adult": false,
+        "backdrop_path": "/ugreOrjU6q6900nsICw4O9L4Cmr.jpg",
+        "genre_ids": [
+          14,
+          28
+        ],
+        "id": 557,
+        "original_language": "ja",
+        "original_title": "Chainsaw Man",
+        "overview": "After being bitten by a genetically altered spider, nerdy high school student Peter Parker is endowed with amazing powers to become the Amazing superhero known as Spider-Man.",
+        "popularity": 60.441,
+        "poster_path": "/rweIrveL43TaxUN0akQEaAXL6x0.jpg",
+        "release_date": "2002-05-01",
+        "title": "Spider-Man",
+        "video": false,
+        "vote_average": 8.6,
+        "vote_count": 342
+      }
+    ],
+    "total_pages": 1,
+    "total_results": 1
+  }
