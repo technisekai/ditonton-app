@@ -18,19 +18,13 @@ void init() {
   */
   // provider
   locator.registerFactory(
-    () => MovieListNotifier(
-      getNowPlayingMovies: locator(),
-      getPopularMovies: locator(),
-      getTopRatedMovies: locator(),
+    () => NowPlayingMovieBloc(
+      locator(),
     ),
   );
   locator.registerFactory(
-    () => MovieDetailNotifier(
-      getMovieDetail: locator(),
-      getMovieRecommendations: locator(),
-      getWatchListStatus: locator(),
-      saveWatchlist: locator(),
-      removeWatchlist: locator(),
+    () => DetailMovieBloc(
+      locator(),
     ),
   );
   locator.registerFactory(
@@ -39,18 +33,26 @@ void init() {
     ),
   );
   locator.registerFactory(
-    () => PopularMoviesNotifier(
+    () => PopularMovieBloc(
       locator(),
     ),
   );
   locator.registerFactory(
-    () => TopRatedMoviesNotifier(
-      getTopRatedMovies: locator(),
+    () => TopRatedMovieBloc(
+      locator(),
     ),
   );
   locator.registerFactory(
-    () => WatchlistMovieNotifier(
+    () => WatchlistMovieBloc(
       getWatchlistMovies: locator(),
+      getWatchListStatus: locator(),
+      saveWatchlist: locator(),
+      removeWatchlist: locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => RecommendationMovieBloc(
+      locator(),
     ),
   );
 

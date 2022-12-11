@@ -17,24 +17,18 @@ export 'domain/usecases/get_watchlist_tv.dart';
 export 'domain/usecases/get_watchlist_tv_status.dart';
 export 'domain/usecases/remove_tv_watchlist.dart';
 export 'domain/usecases/save_tv_watchlist.dart';
-export 'presentation/provider/tv_detail_notifier.dart';
-export 'presentation/provider/tv_list_notifier.dart';
-export 'presentation/provider/popular_tv_notifier.dart';
-export 'presentation/provider/top_rated_tv_notifier.dart';
-export 'presentation/provider/watchlist_tv_notifier.dart';
+
 export 'presentation/pages/tv_detail_page.dart';
 export 'presentation/pages/home_tv_page.dart';
 export 'presentation/pages/popular_tv_page.dart';
 export 'presentation/pages/top_rated_tv_page.dart';
 export 'presentation/pages/watchlist_tv_page.dart';
-export 'presentation/provider/tv_detail_notifier.dart';
-export 'presentation/provider/tv_list_notifier.dart';
-export 'presentation/provider/popular_tv_notifier.dart';
-export 'presentation/provider/top_rated_tv_notifier.dart';
-export 'presentation/provider/watchlist_tv_notifier.dart';
+
 export 'presentation/pages/lists_tv_page.dart';
 export 'domain/entities/tv_detail.dart';
 export 'data/models/tv_response.dart';
 export 'data/models/tv_table.dart';
 export 'data/models/tv_model.dart';
 export 'data/models/tv_detail_model.dart';
+
+export 'domain/usecases/get_watchlist_tv_status.dart';

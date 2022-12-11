@@ -5,6 +5,7 @@ import 'package:ditonton/injection.dart' as di;
 
 import 'package:core/core.dart';
 import 'package:about/about_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 /*
   MOVIE
@@ -32,23 +33,26 @@ class MyApp extends StatelessWidget {
         /*
           MOVIE
         */
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieListNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<NowPlayingMovieBloc>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieDetailNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<DetailMovieBloc>(),
         ),
         ChangeNotifierProvider(
           create: (_) => di.locator<MovieSearchNotifier>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TopRatedMoviesNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<TopRatedMovieBloc>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<PopularMoviesNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<PopularMovieBloc>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<WatchlistMovieNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<WatchlistMovieBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<RecommendationMovieBloc>(),
         ),
         /*
           TV SERIES

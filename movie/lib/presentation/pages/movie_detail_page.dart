@@ -2,12 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:core/core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie/domain/entities/genre.dart';
-import 'package:movie/domain/entities/movie.dart';
 import 'package:movie/domain/entities/movie_detail.dart';
 import 'package:movie/presentation/bloc/movie_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:provider/provider.dart';
 
 class MovieDetailPage extends StatefulWidget {
   static const ROUTE_NAME = '/detail';
@@ -23,17 +21,19 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() {
-      context.read<DetailMovieBloc>().add(
-            DetailMovie(widget.id),
-          );
-      context.read<WatchlistMovieBloc>().add(
-            WatchlistStatus(widget.id),
-          );
-      context.read<RecommendationMovieBloc>().add(
-            RecommendationMovie(widget.id),
-          );
-    });
+    Future.microtask(
+      () {
+        context.read<DetailMovieBloc>().add(
+              DetailMovie(widget.id),
+            );
+        context.read<WatchlistMovieBloc>().add(
+              WatchlistStatus(widget.id),
+            );
+        context.read<RecommendationMovieBloc>().add(
+              RecommendationMovie(widget.id),
+            );
+      },
+    );
   }
 
   @override

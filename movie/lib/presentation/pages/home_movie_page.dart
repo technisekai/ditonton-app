@@ -14,7 +14,6 @@ import 'package:movie/presentation/bloc/movie_bloc.dart';
 import 'package:tv_series/presentation/pages/home_tv_page.dart';
 import 'package:tv_series/presentation/pages/watchlist_tv_page.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeMoviePage extends StatefulWidget {
