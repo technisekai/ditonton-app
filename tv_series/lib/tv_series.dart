@@ -32,3 +32,4 @@ export 'data/models/tv_model.dart';
 export 'data/models/tv_detail_model.dart';
 
 export 'domain/usecases/get_watchlist_tv_status.dart';
+export 'presentation/bloc/tv_bloc.dart';
