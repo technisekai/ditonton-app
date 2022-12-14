@@ -1,6 +1,5 @@
 // movie
 import 'package:movie/movie.dart';
-import 'package:search/presentation/bloc/search_bloc.dart';
 
 // tv
 import 'package:tv_series/tv_series.dart';
@@ -10,6 +9,7 @@ import 'package:search/search.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
+import 'package:core/core.dart';
 
 final locator = GetIt.instance;
 
@@ -139,6 +139,8 @@ void init() {
   locator.registerLazySingleton(() => SaveTvWatchlist(locator()));
   locator.registerLazySingleton(() => RemoveTvWatchlist(locator()));
   locator.registerLazySingleton(() => GetWatchlistTv(locator()));
+
+  locator.registerLazySingleton(() => CertSsl());
 
   // repository
   locator.registerLazySingleton<TvRepository>(
