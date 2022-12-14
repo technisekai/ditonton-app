@@ -1,8 +1,8 @@
 import 'package:core/core.dart';
-import 'package:tv_series/presentation/provider/popular_tv_notifier.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tv_series/presentation/bloc/tv_bloc.dart';
 import 'package:tv_series/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class PopularTvPage extends StatefulWidget {
   static const ROUTE_NAME = '/popular-tv';
@@ -15,37 +15,40 @@ class _PopularMoviesPageState extends State<PopularTvPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<PopularTvNotifier>(context, listen: false)
-            .fetchPopularTv());
+    Future.microtask(
+      () => context.read<PopularTvBloc>().add(
+            PopularTv(),
+          ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Popular TV'),
+        title: const Text('Popular TV'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<PopularTvNotifier>(
-          builder: (context, data, child) {
-            if (data.state == RequestState.Loading) {
-              return Center(
+        child: BlocBuilder<PopularTvBloc, TvState>(
+          builder: (context, state) {
+            if (state is PopularTvLoading) {
+              return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.state == RequestState.Loaded) {
+            } else if (state is PopularTvHasData) {
+              final result = state.resultPopularTv;
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final movie = data.tv[index];
-                  return TvCard(movie);
+                  final tv = result[index];
+                  return TvCard(tv);
                 },
-                itemCount: data.tv.length,
+                itemCount: result.length,
               );
             } else {
-              return Center(
+              return const Center(
                 key: Key('error_message'),
-                child: Text(data.message),
+                child: Text('Failed'),
               );
             }
           },

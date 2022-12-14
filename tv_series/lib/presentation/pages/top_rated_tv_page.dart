@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
-import 'package:tv_series/presentation/provider/top_rated_tv_notifier.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tv_series/presentation/bloc/tv_bloc.dart';
 import 'package:tv_series/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,9 +16,11 @@ class _TopRatedTvPageState extends State<TopRatedTvPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<TopRatedTvNotifier>(context, listen: false)
-            .fetchTopRatedTv());
+    Future.microtask(
+      () => context.read<TopRatedTvBloc>().add(
+            TopRatedTv(),
+          ),
+    );
   }
 
   @override
@@ -28,24 +31,25 @@ class _TopRatedTvPageState extends State<TopRatedTvPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<TopRatedTvNotifier>(
-          builder: (context, data, child) {
-            if (data.state == RequestState.Loading) {
-              return Center(
+        child: BlocBuilder<TopRatedTvBloc, TvState>(
+          builder: (context, state) {
+            if (state is TopRatedTvLoading) {
+              return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.state == RequestState.Loaded) {
+            } else if (state is TopRatedTvHasData) {
+              final result = state.resultTopRatedTv;
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final movie = data.tv[index];
-                  return TvCard(movie);
+                  final tv = result[index];
+                  return TvCard(tv);
                 },
-                itemCount: data.tv.length,
+                itemCount: result.length,
               );
             } else {
-              return Center(
+              return const Center(
                 key: Key('error_message'),
-                child: Text(data.message),
+                child: Text('Failed'),
               );
             }
           },

@@ -7,3 +7,4 @@ export 'utils/exception.dart';
 export 'utils/failure.dart';
 export 'utils/state_enum.dart';
 export 'package:core/utils/utils.dart';
+export 'package:core/utils/ssl.dart';
