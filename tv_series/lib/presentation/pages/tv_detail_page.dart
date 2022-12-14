@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:core/core.dart';
 import 'package:movie/domain/entities/genre.dart';
-import 'package:tv_series/domain/entities/tv.dart';
 import 'package:tv_series/domain/entities/tv_detail.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tv_series/presentation/bloc/tv_bloc.dart';
@@ -148,6 +147,18 @@ class _DetailContentState extends State<DetailContent> {
                                   message = status == false
                                       ? watchlistAddSuccessMessage
                                       : watchlistRemoveSuccessMessage;
+                                } else {
+                                  message = !widget.isAddedToTvWatchlist
+                                      ? watchlistAddSuccessMessage
+                                      : watchlistRemoveSuccessMessage;
+                                }
+                                if (message == watchlistAddSuccessMessage ||
+                                    message == watchlistRemoveSuccessMessage) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(message),
+                                    ),
+                                  );
                                 } else {
                                   showDialog(
                                       context: context,

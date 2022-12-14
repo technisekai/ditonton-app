@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tv_series/presentation/bloc/tv_bloc.dart';
 import 'package:tv_series/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class ListsTvPage extends StatefulWidget {
   static const ROUTE_NAME = '/lists-tv';
@@ -27,7 +26,7 @@ class _ListsTvPageState extends State<ListsTvPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lists TV'),
+        title: const Text('Lists TV'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
