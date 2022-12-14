@@ -1,5 +1,6 @@
 // movie
 import 'package:movie/movie.dart';
+import 'package:search/presentation/bloc/search_bloc.dart';
 
 // tv
 import 'package:tv_series/tv_series.dart';
@@ -28,8 +29,8 @@ void init() {
     ),
   );
   locator.registerFactory(
-    () => MovieSearchNotifier(
-      searchMovies: locator(),
+    () => MovieSearchBloc(
+      locator(),
     ),
   );
   locator.registerFactory(
@@ -100,8 +101,8 @@ void init() {
     ),
   );
   locator.registerFactory(
-    () => TvSearchNotifier(
-      searchTv: locator(),
+    () => TvSearchBloc(
+      locator(),
     ),
   );
   locator.registerFactory(
