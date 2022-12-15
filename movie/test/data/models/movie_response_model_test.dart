@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:core/core.dart';
 import 'package:movie/movie.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -10,7 +9,7 @@ void main() {
   final tMovieModel = MovieModel(
     adult: false,
     backdropPath: "/path.jpg",
-    genreIds: [1, 2, 3, 4],
+    genreIds: const [1, 2, 3, 4],
     id: 1,
     originalTitle: "Original Title",
     overview: "Overview",
