@@ -6,7 +6,7 @@ import 'package:http/io_client.dart';
 
 class CertSsl extends IOClient {
   Future<SecurityContext> get globalContext async {
-    final sslCert = await rootBundle.load('../certificates/certificates.pem');
+    final sslCert = await rootBundle.load('certificates/themoviedb.crt');
     SecurityContext securityContext = SecurityContext(withTrustedRoots: false);
     securityContext.setTrustedCertificatesBytes(sslCert.buffer.asInt8List());
     return securityContext;
