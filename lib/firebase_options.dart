@@ -47,31 +47,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBVouvfywc9uXydxH2H3TRMRoHeZq2B-NE',
-    appId: '1:179231310704:web:4aad78b9fae36499e205b5',
-    messagingSenderId: '179231310704',
-    projectId: 'ditonton-7ba07',
-    authDomain: 'ditonton-7ba07.firebaseapp.com',
-    storageBucket: 'ditonton-7ba07.appspot.com',
-    measurementId: 'G-14HC5TK2XV',
+    apiKey: 'AIzaSyDG_0ETUJm7QdwcJwF4MUsh8P3n7RBeNpA',
+    appId: '1:268399764800:web:a80a41cff1ce8ce4bfc6a5',
+    messagingSenderId: '268399764800',
+    projectId: 'ditonton-382f3',
+    authDomain: 'ditonton-382f3.firebaseapp.com',
+    storageBucket: 'ditonton-382f3.appspot.com',
+    measurementId: 'G-S5N1JM6ZS8',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDnexQR_0Y2LG7JdK3sAQR5ahyyU4o-g40',
-    appId: '1:179231310704:android:4a4de3f7b27acbc9e205b5',
-    messagingSenderId: '179231310704',
-    projectId: 'ditonton-7ba07',
-    storageBucket: 'ditonton-7ba07.appspot.com',
+    apiKey: 'AIzaSyBNkgaSlo7t2WJ8FeLn9CpOwMyE37Eyk0c',
+    appId: '1:268399764800:android:ddf57047ca3eed07bfc6a5',
+    messagingSenderId: '268399764800',
+    projectId: 'ditonton-382f3',
+    storageBucket: 'ditonton-382f3.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBOrHGeg2Ix1-B_hDEg5nF2EF29Xn2-LFg',
-    appId: '1:179231310704:ios:4b0986240dadbe2ae205b5',
-    messagingSenderId: '179231310704',
-    projectId: 'ditonton-7ba07',
-    storageBucket: 'ditonton-7ba07.appspot.com',
-    iosClientId:
-        '179231310704-pp7715jub86sral6etfcuog6hhb2lld9.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCFRvwP9JIwttr1qrYKVT4QS5l06AndWlc',
+    appId: '1:268399764800:ios:8d012a55d992030dbfc6a5',
+    messagingSenderId: '268399764800',
+    projectId: 'ditonton-382f3',
+    storageBucket: 'ditonton-382f3.appspot.com',
+    iosClientId: '268399764800-7dc7t6hp8jjitv9aj24vj90ce4b028vv.apps.googleusercontent.com',
     iosBundleId: 'com.dicoding.ditonton',
   );
 }
